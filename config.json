@@ -1,0 +1,16 @@
+{
+  "default_video_quality": "best",
+  "default_audio_quality": "320",
+  "default_audio_format": "mp3",
+  "video_output_directory": "",
+  "audio_output_directory": "",
+  "overwrite_behavior": "ask",
+  "resume_enabled": true,
+  "embed_thumbnail": true,
+  "embed_metadata": true,
+  "proxy": "",
+  "cookies_file": "",
+  "ffmpeg_path": "",
+  "yt_dlp_path": "",
+  "concurrent_fragments": 4
+}

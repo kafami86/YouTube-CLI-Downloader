@@ -1,0 +1,560 @@
+2026-09-07 08:34:10  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: https://download.samplelib.com/mp4/sample-5s.mp4
+2026-09-07 08:34:10  DEBUG    ytdl: [yt-dlp] [generic] sample-5s: Downloading webpage
+2026-09-07 08:34:12  DEBUG    ytdl: [yt-dlp] [redirect] Following redirect to https://samplelib.com/mp4/sample-5s.mp4
+2026-09-07 08:34:12  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: https://samplelib.com/mp4/sample-5s.mp4
+2026-09-07 08:34:12  DEBUG    ytdl: [yt-dlp] [generic] sample-5s: Downloading webpage
+2026-09-07 08:34:12  DEBUG    ytdl: [yt-dlp] [info] sample-5s: Downloading 1 format(s): mp4
+2026-09-07 08:34:12  DEBUG    ytdl: [yt-dlp] [download] Destination: C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\video\sample-5s.mp4
+2026-09-07 08:34:14  DEBUG    ytdl: [yt-dlp] [download] Download completed
+2026-09-07 08:34:14  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: https://download.samplelib.com/mp4/sample-5s.mp4
+2026-09-07 08:34:14  DEBUG    ytdl: [yt-dlp] [generic] sample-5s: Downloading webpage
+2026-09-07 08:34:16  DEBUG    ytdl: [yt-dlp] [redirect] Following redirect to https://samplelib.com/mp4/sample-5s.mp4
+2026-09-07 08:34:16  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: https://samplelib.com/mp4/sample-5s.mp4
+2026-09-07 08:34:16  DEBUG    ytdl: [yt-dlp] [generic] sample-5s: Downloading webpage
+2026-09-07 08:34:16  DEBUG    ytdl: [yt-dlp] [info] sample-5s: Downloading 1 format(s): mp4
+2026-09-07 08:34:16  DEBUG    ytdl: [yt-dlp] [download] Destination: C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\audio\sample-5s.mp4
+2026-09-07 08:34:19  DEBUG    ytdl: [yt-dlp] [download] Download completed
+2026-09-07 08:34:19  DEBUG    ytdl: [yt-dlp] [ExtractAudio] Destination: C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\audio\sample-5s.mp3
+2026-09-07 08:34:19  ERROR    ytdl: [yt-dlp] ERROR: Postprocessing: audio conversion failed: ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2026-09-07 08:34:19  ERROR    ytdl: Download failed
+Traceback (most recent call last):
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\postprocessor\ffmpeg.py", line 472, in run_ffmpeg
+    FFmpegPostProcessor.run_ffmpeg(self, path, out_path, opts)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\postprocessor\ffmpeg.py", line 367, in run_ffmpeg
+    return self.run_ffmpeg_multiple_files([path], out_path, opts, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\postprocessor\ffmpeg.py", line 322, in run_ffmpeg_multiple_files
+    return self.real_run_ffmpeg(
+           ~~~~~~~~~~~~~~~~~~~~^
+        [(path, []) for path in input_paths],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        [(out_path, opts)], **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\postprocessor\ffmpeg.py", line 327, in real_run_ffmpeg
+    self.check_version()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\postprocessor\ffmpeg.py", line 225, in check_version
+    raise FFmpegPostProcessorError('ffmpeg not found. Please install or provide the path using --ffmpeg-location')
+yt_dlp.postprocessor.ffmpeg.FFmpegPostProcessorError: ffmpeg not found. Please install or provide the path using --ffmpeg-location
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 3667, in process_info
+    replace_info_dict(self.post_process(dl_filename, info_dict, files_to_move))
+                      ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 3853, in post_process
+    info = self.run_all_pps('post_process', info, additional_pps=info.get('__postprocessors'))
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 3835, in run_all_pps
+    info = self.run_pp(pp, info)
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 3813, in run_pp
+    files_to_delete, infodict = pp.run(infodict)
+                                ~~~~~~^^^^^^^^^^
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\postprocessor\common.py", line 23, in run
+    ret = func(self, info, *args, **kwargs)
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\postprocessor\common.py", line 128, in wrapper
+    return func(self, info)
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\postprocessor\ffmpeg.py", line 523, in run
+    self.run_ffmpeg(path, temp_path, acodec, more_opts)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\postprocessor\ffmpeg.py", line 474, in run_ffmpeg
+    raise PostProcessingError(f'audio conversion failed: {err.msg}')
+yt_dlp.utils.PostProcessingError: audio conversion failed: ffmpeg not found. Please install or provide the path using --ffmpeg-location
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohammad_Kafami\Desktop\ytdlp\downloader.py", line 357, in _run_download
+    info = ydl.extract_info(url, download=True)
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1721, in extract_info
+    return self.__extract_info(url, self.get_info_extractor(key), download, extra_info, process)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1732, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1888, in __extract_info
+    return self.process_ie_result(ie_result, download, extra_info)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1967, in process_ie_result
+    return self.extract_info(
+           ~~~~~~~~~~~~~~~~~^
+        ie_result['url'], download,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        ie_key=ie_result.get('ie_key'),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        extra_info=extra_info)
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1721, in extract_info
+    return self.__extract_info(url, self.get_info_extractor(key), download, extra_info, process)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1732, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1888, in __extract_info
+    return self.process_ie_result(ie_result, download, extra_info)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1947, in process_ie_result
+    ie_result = self.process_video_result(ie_result, download=download)
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 3135, in process_video_result
+    self.process_info(new_info)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 195, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 3669, in process_info
+    self.report_error(f'Postprocessing: {err}')
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1166, in report_error
+    self.trouble(f'{self._format_err("ERROR:", self.Styles.ERROR)} {message}', *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1104, in trouble
+    raise DownloadError(message, exc_info)
+yt_dlp.utils.DownloadError: ERROR: Postprocessing: audio conversion failed: ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2026-09-07 08:35:14  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: https://download.samplelib.com/mp4/sample-5s.mp4
+2026-09-07 08:35:14  DEBUG    ytdl: [yt-dlp] [generic] sample-5s: Downloading webpage
+2026-09-07 08:35:15  DEBUG    ytdl: [yt-dlp] [redirect] Following redirect to https://samplelib.com/mp4/sample-5s.mp4
+2026-09-07 08:35:15  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: https://samplelib.com/mp4/sample-5s.mp4
+2026-09-07 08:35:15  DEBUG    ytdl: [yt-dlp] [generic] sample-5s: Downloading webpage
+2026-09-07 08:35:16  DEBUG    ytdl: [yt-dlp] [info] sample-5s: Downloading 1 format(s): mp4
+2026-09-07 08:35:16  DEBUG    ytdl: [yt-dlp] [download] Destination: C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\audio\sample-5s.mp4
+2026-09-07 08:35:18  DEBUG    ytdl: [yt-dlp] [download] Download completed
+2026-09-07 08:35:18  DEBUG    ytdl: [yt-dlp] [ExtractAudio] Destination: C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\audio\sample-5s.mp3
+2026-09-07 08:35:18  ERROR    ytdl: [yt-dlp] ERROR: Postprocessing: audio conversion failed: ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2026-09-07 08:35:18  ERROR    ytdl: Download failed
+Traceback (most recent call last):
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\postprocessor\ffmpeg.py", line 472, in run_ffmpeg
+    FFmpegPostProcessor.run_ffmpeg(self, path, out_path, opts)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\postprocessor\ffmpeg.py", line 367, in run_ffmpeg
+    return self.run_ffmpeg_multiple_files([path], out_path, opts, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\postprocessor\ffmpeg.py", line 322, in run_ffmpeg_multiple_files
+    return self.real_run_ffmpeg(
+           ~~~~~~~~~~~~~~~~~~~~^
+        [(path, []) for path in input_paths],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        [(out_path, opts)], **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\postprocessor\ffmpeg.py", line 327, in real_run_ffmpeg
+    self.check_version()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\postprocessor\ffmpeg.py", line 225, in check_version
+    raise FFmpegPostProcessorError('ffmpeg not found. Please install or provide the path using --ffmpeg-location')
+yt_dlp.postprocessor.ffmpeg.FFmpegPostProcessorError: ffmpeg not found. Please install or provide the path using --ffmpeg-location
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 3667, in process_info
+    replace_info_dict(self.post_process(dl_filename, info_dict, files_to_move))
+                      ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 3853, in post_process
+    info = self.run_all_pps('post_process', info, additional_pps=info.get('__postprocessors'))
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 3835, in run_all_pps
+    info = self.run_pp(pp, info)
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 3813, in run_pp
+    files_to_delete, infodict = pp.run(infodict)
+                                ~~~~~~^^^^^^^^^^
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\postprocessor\common.py", line 23, in run
+    ret = func(self, info, *args, **kwargs)
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\postprocessor\common.py", line 128, in wrapper
+    return func(self, info)
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\postprocessor\ffmpeg.py", line 523, in run
+    self.run_ffmpeg(path, temp_path, acodec, more_opts)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\postprocessor\ffmpeg.py", line 474, in run_ffmpeg
+    raise PostProcessingError(f'audio conversion failed: {err.msg}')
+yt_dlp.utils.PostProcessingError: audio conversion failed: ffmpeg not found. Please install or provide the path using --ffmpeg-location
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohammad_Kafami\Desktop\ytdlp\downloader.py", line 367, in _run_download
+    info = ydl.extract_info(url, download=True)
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1721, in extract_info
+    return self.__extract_info(url, self.get_info_extractor(key), download, extra_info, process)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1732, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1888, in __extract_info
+    return self.process_ie_result(ie_result, download, extra_info)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1967, in process_ie_result
+    return self.extract_info(
+           ~~~~~~~~~~~~~~~~~^
+        ie_result['url'], download,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        ie_key=ie_result.get('ie_key'),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        extra_info=extra_info)
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1721, in extract_info
+    return self.__extract_info(url, self.get_info_extractor(key), download, extra_info, process)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1732, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1888, in __extract_info
+    return self.process_ie_result(ie_result, download, extra_info)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1947, in process_ie_result
+    ie_result = self.process_video_result(ie_result, download=download)
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 3135, in process_video_result
+    self.process_info(new_info)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 195, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 3669, in process_info
+    self.report_error(f'Postprocessing: {err}')
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1166, in report_error
+    self.trouble(f'{self._format_err("ERROR:", self.Styles.ERROR)} {message}', *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1104, in trouble
+    raise DownloadError(message, exc_info)
+yt_dlp.utils.DownloadError: ERROR: Postprocessing: audio conversion failed: ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2026-09-07 08:36:02  DEBUG    ytdl: FFmpeg found: C:\Users\Mohammad_Kafami\Desktop\ytdlp\bin\ffmpeg\ffmpeg.exe (project-local)
+2026-09-07 08:36:02  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: https://download.samplelib.com/mp4/sample-5s.mp4
+2026-09-07 08:36:02  DEBUG    ytdl: [yt-dlp] [generic] sample-5s: Downloading webpage
+2026-09-07 08:36:04  DEBUG    ytdl: [yt-dlp] [redirect] Following redirect to https://samplelib.com/mp4/sample-5s.mp4
+2026-09-07 08:36:04  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: https://samplelib.com/mp4/sample-5s.mp4
+2026-09-07 08:36:04  DEBUG    ytdl: [yt-dlp] [generic] sample-5s: Downloading webpage
+2026-09-07 08:36:04  DEBUG    ytdl: [yt-dlp] [info] sample-5s: Downloading 1 format(s): mp4
+2026-09-07 08:36:05  DEBUG    ytdl: [yt-dlp] [download] Destination: C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\audio\sample-5s.mp4
+2026-09-07 08:36:08  DEBUG    ytdl: [yt-dlp] [download] Download completed
+2026-09-07 08:36:09  DEBUG    ytdl: [yt-dlp] [ExtractAudio] Destination: C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\audio\sample-5s.mp3
+2026-09-07 08:36:10  DEBUG    ytdl: [yt-dlp] Deleting original file C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\audio\sample-5s.mp4 (pass -k to keep)
+2026-09-07 08:36:48  DEBUG    ytdl: FFmpeg found: C:\Users\Mohammad_Kafami\Desktop\ytdlp\bin\ffmpeg\ffmpeg.exe (project-local)
+2026-09-07 08:37:03  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: https://download.samplelib.com/mp4/sample-5s.mp4
+2026-09-07 08:37:03  DEBUG    ytdl: [yt-dlp] [generic] sample-5s: Downloading webpage
+2026-09-07 08:37:05  DEBUG    ytdl: [yt-dlp] [redirect] Following redirect to https://samplelib.com/mp4/sample-5s.mp4
+2026-09-07 08:37:05  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: https://samplelib.com/mp4/sample-5s.mp4
+2026-09-07 08:37:05  DEBUG    ytdl: [yt-dlp] [generic] sample-5s: Downloading webpage
+2026-09-07 08:40:49  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:2310/index.html
+2026-09-07 08:40:49  DEBUG    ytdl: [yt-dlp] [generic] index: Downloading webpage
+2026-09-07 08:40:49  WARNING  ytdl: [yt-dlp] [generic] Falling back on generic information extractor
+2026-09-07 08:40:49  DEBUG    ytdl: [yt-dlp] [generic] index: Extracting information
+2026-09-07 08:40:50  ERROR    ytdl: [yt-dlp] ERROR: Unsupported URL: http://127.0.0.1:2310/index.html
+2026-09-07 08:40:50  ERROR    ytdl: Playlist extraction failed
+Traceback (most recent call last):
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1732, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1867, in __extract_info
+    ie_result = ie.extract(url)
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\extractor\common.py", line 765, in extract
+    ie_result = self._real_extract(url)
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\extractor\generic.py", line 984, in _real_extract
+    raise UnsupportedError(url)
+yt_dlp.utils.UnsupportedError: Unsupported URL: http://127.0.0.1:2310/index.html
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohammad_Kafami\Desktop\ytdlp\downloader.py", line 168, in playlist_entries
+    info = ydl.extract_info(url, download=False)
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1721, in extract_info
+    return self.__extract_info(url, self.get_info_extractor(key), download, extra_info, process)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1750, in wrapper
+    self.report_error(str(e), e.format_traceback())
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1166, in report_error
+    self.trouble(f'{self._format_err("ERROR:", self.Styles.ERROR)} {message}', *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad_Kafami\AppData\Local\Programs\Python\Python314\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1104, in trouble
+    raise DownloadError(message, exc_info)
+yt_dlp.utils.DownloadError: ERROR: Unsupported URL: http://127.0.0.1:2310/index.html
+2026-09-07 08:45:42  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:2632/playlist.xspf
+2026-09-07 08:45:42  DEBUG    ytdl: [yt-dlp] [generic] playlist: Downloading webpage
+2026-09-07 08:45:42  WARNING  ytdl: [yt-dlp] [generic] Falling back on generic information extractor
+2026-09-07 08:45:42  DEBUG    ytdl: [yt-dlp] [generic] playlist: Extracting information
+2026-09-07 08:45:42  DEBUG    ytdl: [yt-dlp] [download] Downloading playlist: playlist
+2026-09-07 08:45:42  DEBUG    ytdl: [yt-dlp] [generic] Playlist playlist: Downloading 3 items of 3
+2026-09-07 08:45:42  DEBUG    ytdl: [yt-dlp] [download] Downloading item 1 of 3
+2026-09-07 08:45:42  DEBUG    ytdl: [yt-dlp] [download] Downloading item 2 of 3
+2026-09-07 08:45:42  DEBUG    ytdl: [yt-dlp] [download] Downloading item 3 of 3
+2026-09-07 08:45:42  DEBUG    ytdl: [yt-dlp] [download] Finished downloading playlist: playlist
+2026-09-07 08:45:42  DEBUG    ytdl: FFmpeg found: C:\Users\Mohammad_Kafami\Desktop\ytdlp\bin\ffmpeg\ffmpeg.exe (project-local)
+2026-09-07 08:45:42  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:2632/sample-1.mp4
+2026-09-07 08:45:42  DEBUG    ytdl: [yt-dlp] [generic] sample-1: Downloading webpage
+2026-09-07 08:45:43  DEBUG    ytdl: [yt-dlp] [info] sample-1: Downloading 1 format(s): mp4
+2026-09-07 08:45:43  DEBUG    ytdl: [yt-dlp] [download] Destination: C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\video\Sim Playlist\01 - sample-1.mp4
+2026-09-07 08:45:43  DEBUG    ytdl: [yt-dlp] [download] Download completed
+2026-09-07 08:45:43  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:2632/sample-2.mp4
+2026-09-07 08:45:43  DEBUG    ytdl: [yt-dlp] [generic] sample-2: Downloading webpage
+2026-09-07 08:45:43  DEBUG    ytdl: [yt-dlp] [info] sample-2: Downloading 1 format(s): mp4
+2026-09-07 08:45:43  DEBUG    ytdl: [yt-dlp] [download] Destination: C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\video\Sim Playlist\02 - sample-2.mp4
+2026-09-07 08:45:43  DEBUG    ytdl: [yt-dlp] [download] Download completed
+2026-09-07 08:45:43  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:2632/sample-3.mp4
+2026-09-07 08:45:43  DEBUG    ytdl: [yt-dlp] [generic] sample-3: Downloading webpage
+2026-09-07 08:45:43  DEBUG    ytdl: [yt-dlp] [info] sample-3: Downloading 1 format(s): mp4
+2026-09-07 08:45:43  DEBUG    ytdl: [yt-dlp] [download] Destination: C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\video\Sim Playlist\03 - sample-3.mp4
+2026-09-07 08:45:43  DEBUG    ytdl: [yt-dlp] [download] Download completed
+2026-09-07 08:45:43  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:2632/sample-1.mp4
+2026-09-07 08:45:43  DEBUG    ytdl: [yt-dlp] [generic] sample-1: Downloading webpage
+2026-09-07 08:45:43  DEBUG    ytdl: [yt-dlp] [info] sample-1: Downloading 1 format(s): mp4
+2026-09-07 08:45:43  DEBUG    ytdl: [yt-dlp] [download] Destination: C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\audio\Sim Playlist\01 - sample-1.mp4
+2026-09-07 08:45:43  DEBUG    ytdl: [yt-dlp] [download] Download completed
+2026-09-07 08:45:43  DEBUG    ytdl: [yt-dlp] [ExtractAudio] Destination: C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\audio\Sim Playlist\01 - sample-1.mp3
+2026-09-07 08:45:43  DEBUG    ytdl: [yt-dlp] Deleting original file C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\audio\Sim Playlist\01 - sample-1.mp4 (pass -k to keep)
+2026-09-07 08:45:43  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:2632/sample-2.mp4
+2026-09-07 08:45:43  DEBUG    ytdl: [yt-dlp] [generic] sample-2: Downloading webpage
+2026-09-07 08:45:43  DEBUG    ytdl: [yt-dlp] [info] sample-2: Downloading 1 format(s): mp4
+2026-09-07 08:45:44  DEBUG    ytdl: [yt-dlp] [download] Destination: C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\audio\Sim Playlist\02 - sample-2.mp4
+2026-09-07 08:45:44  DEBUG    ytdl: [yt-dlp] [download] Download completed
+2026-09-07 08:45:44  DEBUG    ytdl: [yt-dlp] [ExtractAudio] Destination: C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\audio\Sim Playlist\02 - sample-2.mp3
+2026-09-07 08:45:44  DEBUG    ytdl: [yt-dlp] Deleting original file C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\audio\Sim Playlist\02 - sample-2.mp4 (pass -k to keep)
+2026-09-07 08:45:44  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:2632/sample-3.mp4
+2026-09-07 08:45:44  DEBUG    ytdl: [yt-dlp] [generic] sample-3: Downloading webpage
+2026-09-07 08:45:44  DEBUG    ytdl: [yt-dlp] [info] sample-3: Downloading 1 format(s): mp4
+2026-09-07 08:45:44  DEBUG    ytdl: [yt-dlp] [download] Destination: C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\audio\Sim Playlist\03 - sample-3.mp4
+2026-09-07 08:45:44  DEBUG    ytdl: [yt-dlp] [download] Download completed
+2026-09-07 08:45:44  DEBUG    ytdl: [yt-dlp] [ExtractAudio] Destination: C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\audio\Sim Playlist\03 - sample-3.mp3
+2026-09-07 08:45:44  DEBUG    ytdl: [yt-dlp] Deleting original file C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\audio\Sim Playlist\03 - sample-3.mp4 (pass -k to keep)
+2026-09-07 08:46:14  DEBUG    ytdl: FFmpeg found: C:\Users\Mohammad_Kafami\Desktop\ytdlp\bin\ffmpeg\ffmpeg.exe (project-local)
+2026-09-07 08:46:15  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:3705/big.mp4
+2026-09-07 08:46:15  DEBUG    ytdl: [yt-dlp] [generic] big: Downloading webpage
+2026-09-07 08:46:15  DEBUG    ytdl: [yt-dlp] [info] big: Downloading 1 format(s): mp4
+2026-09-07 08:46:15  DEBUG    ytdl: [yt-dlp] [download] Destination: C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\video\ProgressTest\big.mp4
+2026-09-07 08:46:15  DEBUG    ytdl: [yt-dlp] [download] Download completed
+2026-09-07 08:46:15  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:3705/big.mp4
+2026-09-07 08:46:15  DEBUG    ytdl: [yt-dlp] [generic] big: Downloading webpage
+2026-09-07 08:46:15  DEBUG    ytdl: [yt-dlp] [info] big: Downloading 1 format(s): mp4
+2026-09-07 08:46:15  DEBUG    ytdl: [yt-dlp] [download] Resuming download at byte 4194304
+2026-09-07 08:46:15  DEBUG    ytdl: [yt-dlp] [download] Unable to resume
+2026-09-07 08:46:15  DEBUG    ytdl: [yt-dlp] [download] Destination: C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\video\ProgressTest\big.mp4
+2026-09-07 08:46:15  DEBUG    ytdl: [yt-dlp] [download] Download completed
+2026-09-07 08:54:47  DEBUG    ytdl: FFmpeg found: C:\Users\Mohammad_Kafami\Desktop\ytdlp\bin\ffmpeg\ffmpeg.exe (project-local)
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:4493/video.mp4
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] [generic] video: Downloading webpage
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:4493/video.mp4
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] [generic] video: Downloading webpage
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] [info] video: Downloading 1 format(s): mp4
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] [download] Destination: C:\Users\MOHAMM~1\AppData\Local\Temp\tmpv5wfzxkq\out\video.mp4
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] [download] Download completed
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:4493/video.mp4
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] [generic] video: Downloading webpage
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:4493/video.mp4
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] [generic] video: Downloading webpage
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:4493/video.mp4
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] [generic] video: Downloading webpage
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] [info] video: Downloading 1 format(s): mp4
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] [download] Destination: C:\Users\MOHAMM~1\AppData\Local\Temp\tmpv5wfzxkq\out\video (2).mp4
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] [download] Download completed
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:4493/video.mp4
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] [generic] video: Downloading webpage
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:4493/video.mp4
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] [generic] video: Downloading webpage
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] [info] video: Downloading 1 format(s): mp4
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] Deleting existing file C:\Users\MOHAMM~1\AppData\Local\Temp\tmpv5wfzxkq\out\video.mp4
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] [download] Destination: C:\Users\MOHAMM~1\AppData\Local\Temp\tmpv5wfzxkq\out\video.mp4
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] [download] Download completed
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:4493/video.mp4
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] [generic] video: Downloading webpage
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:4493/video.mp4
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] [generic] video: Downloading webpage
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] [info] video: Downloading 1 format(s): mp4
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] Deleting existing file C:\Users\MOHAMM~1\AppData\Local\Temp\tmpv5wfzxkq\out\video.mp4
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] [download] Destination: C:\Users\MOHAMM~1\AppData\Local\Temp\tmpv5wfzxkq\out\video.mp4
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] [download] Download completed
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:4493/video.mp4
+2026-09-07 08:54:48  DEBUG    ytdl: [yt-dlp] [generic] video: Downloading webpage
+2026-09-07 08:58:49  DEBUG    ytdl: FFmpeg found: C:\Users\Mohammad_Kafami\Desktop\ytdlp\bin\ffmpeg\ffmpeg.exe (project-local)
+2026-09-07 08:58:49  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:11367/video.mp4
+2026-09-07 08:58:49  DEBUG    ytdl: [yt-dlp] [generic] video: Downloading webpage
+2026-09-07 08:58:49  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:11367/video.mp4
+2026-09-07 08:58:49  DEBUG    ytdl: [yt-dlp] [generic] video: Downloading webpage
+2026-09-07 08:58:49  DEBUG    ytdl: [yt-dlp] [info] video: Downloading 1 format(s): mp4
+2026-09-07 08:58:49  DEBUG    ytdl: [yt-dlp] [download] Destination: C:\Users\MOHAMM~1\AppData\Local\Temp\tmp2k0v1h7i\out\video.mp4
+2026-09-07 08:58:49  DEBUG    ytdl: [yt-dlp] [download] Download completed
+2026-09-07 08:58:49  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:11367/video.mp4
+2026-09-07 08:58:49  DEBUG    ytdl: [yt-dlp] [generic] video: Downloading webpage
+2026-09-07 08:58:49  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:11367/video.mp4
+2026-09-07 08:58:49  DEBUG    ytdl: [yt-dlp] [generic] video: Downloading webpage
+2026-09-07 08:58:49  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:11367/video.mp4
+2026-09-07 08:58:49  DEBUG    ytdl: [yt-dlp] [generic] video: Downloading webpage
+2026-09-07 08:58:49  DEBUG    ytdl: [yt-dlp] [info] video: Downloading 1 format(s): mp4
+2026-09-07 08:58:50  DEBUG    ytdl: [yt-dlp] [download] Destination: C:\Users\MOHAMM~1\AppData\Local\Temp\tmp2k0v1h7i\out\video (2).mp4
+2026-09-07 08:58:50  DEBUG    ytdl: [yt-dlp] [download] Download completed
+2026-09-07 08:58:50  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:11367/video.mp4
+2026-09-07 08:58:50  DEBUG    ytdl: [yt-dlp] [generic] video: Downloading webpage
+2026-09-07 08:58:50  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:11367/video.mp4
+2026-09-07 08:58:50  DEBUG    ytdl: [yt-dlp] [generic] video: Downloading webpage
+2026-09-07 08:58:50  DEBUG    ytdl: [yt-dlp] [info] video: Downloading 1 format(s): mp4
+2026-09-07 08:58:50  DEBUG    ytdl: [yt-dlp] Deleting existing file C:\Users\MOHAMM~1\AppData\Local\Temp\tmp2k0v1h7i\out\video.mp4
+2026-09-07 08:58:50  DEBUG    ytdl: [yt-dlp] [download] Destination: C:\Users\MOHAMM~1\AppData\Local\Temp\tmp2k0v1h7i\out\video.mp4
+2026-09-07 08:58:50  DEBUG    ytdl: [yt-dlp] [download] Download completed
+2026-09-07 08:58:50  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:11367/video.mp4
+2026-09-07 08:58:50  DEBUG    ytdl: [yt-dlp] [generic] video: Downloading webpage
+2026-09-07 08:58:50  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:11367/video.mp4
+2026-09-07 08:58:50  DEBUG    ytdl: [yt-dlp] [generic] video: Downloading webpage
+2026-09-07 08:58:50  DEBUG    ytdl: [yt-dlp] [info] video: Downloading 1 format(s): mp4
+2026-09-07 08:58:50  DEBUG    ytdl: [yt-dlp] Deleting existing file C:\Users\MOHAMM~1\AppData\Local\Temp\tmp2k0v1h7i\out\video.mp4
+2026-09-07 08:58:50  DEBUG    ytdl: [yt-dlp] [download] Destination: C:\Users\MOHAMM~1\AppData\Local\Temp\tmp2k0v1h7i\out\video.mp4
+2026-09-07 08:58:50  DEBUG    ytdl: [yt-dlp] [download] Download completed
+2026-09-07 08:58:50  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:11367/video.mp4
+2026-09-07 08:58:50  DEBUG    ytdl: [yt-dlp] [generic] video: Downloading webpage
+2026-09-07 09:00:09  DEBUG    ytdl: FFmpeg found: C:\Users\Mohammad_Kafami\Desktop\ytdlp\bin\ffmpeg\ffmpeg.exe (project-local)
+2026-09-07 09:00:09  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:2852/video.mp4
+2026-09-07 09:00:09  DEBUG    ytdl: [yt-dlp] [generic] video: Downloading webpage
+2026-09-07 09:00:09  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:2852/video.mp4
+2026-09-07 09:00:09  DEBUG    ytdl: [yt-dlp] [generic] video: Downloading webpage
+2026-09-07 09:00:09  DEBUG    ytdl: [yt-dlp] [info] video: Downloading 1 format(s): mp4
+2026-09-07 09:00:09  DEBUG    ytdl: [yt-dlp] [download] Destination: C:\Users\MOHAMM~1\AppData\Local\Temp\tmppeyfme96\out\video.mp4
+2026-09-07 09:00:09  DEBUG    ytdl: [yt-dlp] [download] Download completed
+2026-09-07 09:00:09  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:2852/video.mp4
+2026-09-07 09:00:09  DEBUG    ytdl: [yt-dlp] [generic] video: Downloading webpage
+2026-09-07 09:00:09  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:2852/video.mp4
+2026-09-07 09:00:09  DEBUG    ytdl: [yt-dlp] [generic] video: Downloading webpage
+2026-09-07 09:00:09  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:2852/video.mp4
+2026-09-07 09:00:09  DEBUG    ytdl: [yt-dlp] [generic] video: Downloading webpage
+2026-09-07 09:00:09  DEBUG    ytdl: [yt-dlp] [info] video: Downloading 1 format(s): mp4
+2026-09-07 09:00:09  DEBUG    ytdl: [yt-dlp] [download] Destination: C:\Users\MOHAMM~1\AppData\Local\Temp\tmppeyfme96\out\video (2).mp4
+2026-09-07 09:00:09  DEBUG    ytdl: [yt-dlp] [download] Download completed
+2026-09-07 09:00:10  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:2852/video.mp4
+2026-09-07 09:00:10  DEBUG    ytdl: [yt-dlp] [generic] video: Downloading webpage
+2026-09-07 09:00:10  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:2852/video.mp4
+2026-09-07 09:00:10  DEBUG    ytdl: [yt-dlp] [generic] video: Downloading webpage
+2026-09-07 09:00:10  DEBUG    ytdl: [yt-dlp] [info] video: Downloading 1 format(s): mp4
+2026-09-07 09:00:10  DEBUG    ytdl: [yt-dlp] Deleting existing file C:\Users\MOHAMM~1\AppData\Local\Temp\tmppeyfme96\out\video.mp4
+2026-09-07 09:00:10  DEBUG    ytdl: [yt-dlp] [download] Destination: C:\Users\MOHAMM~1\AppData\Local\Temp\tmppeyfme96\out\video.mp4
+2026-09-07 09:00:10  DEBUG    ytdl: [yt-dlp] [download] Download completed
+2026-09-07 09:00:10  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:2852/video.mp4
+2026-09-07 09:00:10  DEBUG    ytdl: [yt-dlp] [generic] video: Downloading webpage
+2026-09-07 09:00:10  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:2852/video.mp4
+2026-09-07 09:00:10  DEBUG    ytdl: [yt-dlp] [generic] video: Downloading webpage
+2026-09-07 09:00:10  DEBUG    ytdl: [yt-dlp] [info] video: Downloading 1 format(s): mp4
+2026-09-07 09:00:10  DEBUG    ytdl: [yt-dlp] Deleting existing file C:\Users\MOHAMM~1\AppData\Local\Temp\tmppeyfme96\out\video.mp4
+2026-09-07 09:00:10  DEBUG    ytdl: [yt-dlp] [download] Destination: C:\Users\MOHAMM~1\AppData\Local\Temp\tmppeyfme96\out\video.mp4
+2026-09-07 09:00:10  DEBUG    ytdl: [yt-dlp] [download] Download completed
+2026-09-07 09:00:10  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:2852/video.mp4
+2026-09-07 09:00:10  DEBUG    ytdl: [yt-dlp] [generic] video: Downloading webpage
+2026-09-07 09:00:11  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:2868/playlist.xspf
+2026-09-07 09:00:11  DEBUG    ytdl: [yt-dlp] [generic] playlist: Downloading webpage
+2026-09-07 09:00:11  WARNING  ytdl: [yt-dlp] [generic] Falling back on generic information extractor
+2026-09-07 09:00:11  DEBUG    ytdl: [yt-dlp] [generic] playlist: Extracting information
+2026-09-07 09:00:11  DEBUG    ytdl: [yt-dlp] [download] Downloading playlist: playlist
+2026-09-07 09:00:11  DEBUG    ytdl: [yt-dlp] [generic] Playlist playlist: Downloading 3 items of 3
+2026-09-07 09:00:11  DEBUG    ytdl: [yt-dlp] [download] Downloading item 1 of 3
+2026-09-07 09:00:11  DEBUG    ytdl: [yt-dlp] [download] Downloading item 2 of 3
+2026-09-07 09:00:11  DEBUG    ytdl: [yt-dlp] [download] Downloading item 3 of 3
+2026-09-07 09:00:11  DEBUG    ytdl: [yt-dlp] [download] Finished downloading playlist: playlist
+2026-09-07 09:00:11  DEBUG    ytdl: FFmpeg found: C:\Users\Mohammad_Kafami\Desktop\ytdlp\bin\ffmpeg\ffmpeg.exe (project-local)
+2026-09-07 09:00:11  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:2868/sample-1.mp4
+2026-09-07 09:00:11  DEBUG    ytdl: [yt-dlp] [generic] sample-1: Downloading webpage
+2026-09-07 09:00:11  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:2868/sample-1.mp4
+2026-09-07 09:00:11  DEBUG    ytdl: [yt-dlp] [generic] sample-1: Downloading webpage
+2026-09-07 09:00:11  DEBUG    ytdl: [yt-dlp] [info] sample-1: Downloading 1 format(s): mp4
+2026-09-07 09:00:11  DEBUG    ytdl: [yt-dlp] [download] C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\video\Sim Playlist\01 - sample-1.mp4 has already been downloaded
+2026-09-07 09:00:11  DEBUG    ytdl: [yt-dlp] [download] Download completed
+2026-09-07 09:00:11  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:2868/sample-2.mp4
+2026-09-07 09:00:11  DEBUG    ytdl: [yt-dlp] [generic] sample-2: Downloading webpage
+2026-09-07 09:00:11  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:2868/sample-2.mp4
+2026-09-07 09:00:11  DEBUG    ytdl: [yt-dlp] [generic] sample-2: Downloading webpage
+2026-09-07 09:00:11  DEBUG    ytdl: [yt-dlp] [info] sample-2: Downloading 1 format(s): mp4
+2026-09-07 09:00:11  DEBUG    ytdl: [yt-dlp] [download] C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\video\Sim Playlist\02 - sample-2.mp4 has already been downloaded
+2026-09-07 09:00:11  DEBUG    ytdl: [yt-dlp] [download] Download completed
+2026-09-07 09:00:11  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:2868/sample-3.mp4
+2026-09-07 09:00:11  DEBUG    ytdl: [yt-dlp] [generic] sample-3: Downloading webpage
+2026-09-07 09:00:12  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:2868/sample-3.mp4
+2026-09-07 09:00:12  DEBUG    ytdl: [yt-dlp] [generic] sample-3: Downloading webpage
+2026-09-07 09:00:12  DEBUG    ytdl: [yt-dlp] [info] sample-3: Downloading 1 format(s): mp4
+2026-09-07 09:00:12  DEBUG    ytdl: [yt-dlp] [download] C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\video\Sim Playlist\03 - sample-3.mp4 has already been downloaded
+2026-09-07 09:00:12  DEBUG    ytdl: [yt-dlp] [download] Download completed
+2026-09-07 09:00:12  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:2868/sample-1.mp4
+2026-09-07 09:00:12  DEBUG    ytdl: [yt-dlp] [generic] sample-1: Downloading webpage
+2026-09-07 09:00:12  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:2868/sample-1.mp4
+2026-09-07 09:00:12  DEBUG    ytdl: [yt-dlp] [generic] sample-1: Downloading webpage
+2026-09-07 09:00:12  DEBUG    ytdl: [yt-dlp] [info] sample-1: Downloading 1 format(s): mp4
+2026-09-07 09:00:12  DEBUG    ytdl: [yt-dlp] [download] Destination: C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\audio\Sim Playlist\01 - sample-1.mp4
+2026-09-07 09:00:12  DEBUG    ytdl: [yt-dlp] [download] Download completed
+2026-09-07 09:00:12  DEBUG    ytdl: [yt-dlp] [ExtractAudio] Destination: C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\audio\Sim Playlist\01 - sample-1.mp3
+2026-09-07 09:00:12  DEBUG    ytdl: [yt-dlp] Deleting original file C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\audio\Sim Playlist\01 - sample-1.mp4 (pass -k to keep)
+2026-09-07 09:00:12  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:2868/sample-2.mp4
+2026-09-07 09:00:12  DEBUG    ytdl: [yt-dlp] [generic] sample-2: Downloading webpage
+2026-09-07 09:00:12  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:2868/sample-2.mp4
+2026-09-07 09:00:12  DEBUG    ytdl: [yt-dlp] [generic] sample-2: Downloading webpage
+2026-09-07 09:00:12  DEBUG    ytdl: [yt-dlp] [info] sample-2: Downloading 1 format(s): mp4
+2026-09-07 09:00:12  DEBUG    ytdl: [yt-dlp] [download] Destination: C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\audio\Sim Playlist\02 - sample-2.mp4
+2026-09-07 09:00:12  DEBUG    ytdl: [yt-dlp] [download] Download completed
+2026-09-07 09:00:12  DEBUG    ytdl: [yt-dlp] [ExtractAudio] Destination: C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\audio\Sim Playlist\02 - sample-2.mp3
+2026-09-07 09:00:12  DEBUG    ytdl: [yt-dlp] Deleting original file C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\audio\Sim Playlist\02 - sample-2.mp4 (pass -k to keep)
+2026-09-07 09:00:12  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:2868/sample-3.mp4
+2026-09-07 09:00:12  DEBUG    ytdl: [yt-dlp] [generic] sample-3: Downloading webpage
+2026-09-07 09:00:12  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:2868/sample-3.mp4
+2026-09-07 09:00:12  DEBUG    ytdl: [yt-dlp] [generic] sample-3: Downloading webpage
+2026-09-07 09:00:12  DEBUG    ytdl: [yt-dlp] [info] sample-3: Downloading 1 format(s): mp4
+2026-09-07 09:00:12  DEBUG    ytdl: [yt-dlp] [download] Destination: C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\audio\Sim Playlist\03 - sample-3.mp4
+2026-09-07 09:00:12  DEBUG    ytdl: [yt-dlp] [download] Download completed
+2026-09-07 09:00:12  DEBUG    ytdl: [yt-dlp] [ExtractAudio] Destination: C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\audio\Sim Playlist\03 - sample-3.mp3
+2026-09-07 09:00:13  DEBUG    ytdl: [yt-dlp] Deleting original file C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\audio\Sim Playlist\03 - sample-3.mp4 (pass -k to keep)
+2026-09-07 09:05:59  ERROR    ytdl: Startup failed
+Traceback (most recent call last):
+  File "C:\Users\Mohammad_Kafami\Desktop\ytdlp\main.py", line 107, in main
+    run_startup(cfg)
+    ~~~~~~~~~~~^^^^^
+  File "C:\Users\Mohammad_Kafami\Desktop\ytdlp\main.py", line 67, in run_startup
+    console.print(cli.banner())
+                  ~~~~~~~~~~^^
+  File "C:\Users\Mohammad_Kafami\Desktop\ytdlp\cli.py", line 63, in banner
+    text.align("center")
+    ~~~~~~~~~~^^^^^^^^^^
+TypeError: Text.align() missing 1 required positional argument: 'width'
+2026-09-07 09:06:19  ERROR    ytdl: Startup failed
+Traceback (most recent call last):
+  File "C:\Users\Mohammad_Kafami\Desktop\ytdlp\main.py", line 107, in main
+    run_startup(cfg)
+    ~~~~~~~~~~~^^^^^
+  File "C:\Users\Mohammad_Kafami\Desktop\ytdlp\main.py", line 67, in run_startup
+    console.print(cli.banner())
+                  ~~~~~~~~~~^^
+  File "C:\Users\Mohammad_Kafami\Desktop\ytdlp\cli.py", line 63, in banner
+    text.align("center")
+    ~~~~~~~~~~^^^^^^^^^^
+TypeError: Text.align() missing 1 required positional argument: 'width'
+2026-09-07 09:06:42  ERROR    ytdl: Startup failed
+Traceback (most recent call last):
+  File "C:\Users\Mohammad_Kafami\Desktop\ytdlp\main.py", line 107, in main
+    run_startup(cfg)
+    ~~~~~~~~~~~^^^^^
+  File "C:\Users\Mohammad_Kafami\Desktop\ytdlp\main.py", line 79, in run_startup
+    cli.progress_bar(f"Initializing YouTube Downloader ({index}/{len(steps)})")
+    ^^^^^^^^^^^^^^^^
+AttributeError: module 'cli' has no attribute 'progress_bar'
+2026-09-07 09:07:01  DEBUG    ytdl: FFmpeg found: C:\Users\Mohammad_Kafami\Desktop\ytdlp\bin\ffmpeg\ffmpeg.exe (project-local)
+2026-09-07 09:07:12  DEBUG    ytdl: FFmpeg found: C:\Users\Mohammad_Kafami\Desktop\ytdlp\bin\ffmpeg\ffmpeg.exe (project-local)
+2026-09-07 09:07:22  DEBUG    ytdl: FFmpeg found: C:\Users\Mohammad_Kafami\Desktop\ytdlp\bin\ffmpeg\ffmpeg.exe (project-local)
+2026-09-07 09:08:13  DEBUG    ytdl: FFmpeg found: C:\Users\Mohammad_Kafami\Desktop\ytdlp\bin\ffmpeg\ffmpeg.exe (project-local)
+2026-09-07 09:08:45  DEBUG    ytdl: FFmpeg found: C:\Users\Mohammad_Kafami\Desktop\ytdlp\bin\ffmpeg\ffmpeg.exe (project-local)
+2026-09-07 09:13:28  DEBUG    ytdl: [yt-dlp] [generic] Extracting URL: http://127.0.0.1:5236/v.mp4
+2026-09-07 09:13:28  DEBUG    ytdl: [yt-dlp] [generic] v: Downloading webpage
+2026-09-07 09:16:52  DEBUG    ytdl: FFmpeg found: C:\Users\Mohammad_Kafami\Desktop\ytdlp\bin\ffmpeg\ffmpeg.exe (project-local)
+2026-09-07 09:17:12  DEBUG    ytdl: FFmpeg found: C:\Users\Mohammad_Kafami\Desktop\ytdlp\bin\ffmpeg\ffmpeg.exe (project-local)
+2026-09-07 09:17:12  DEBUG    ytdl: [yt-dlp] [info] climerge: Downloading 1 format(s): vonly+aonly
+2026-09-07 09:17:12  DEBUG    ytdl: [yt-dlp] [download] Destination: C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\video\CliMergeTest\CLI Merge Test.fvonly.mp4
+2026-09-07 09:17:12  DEBUG    ytdl: [yt-dlp] [download] Download completed
+2026-09-07 09:17:12  DEBUG    ytdl: [yt-dlp] [download] Destination: C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\video\CliMergeTest\CLI Merge Test.faonly.m4a
+2026-09-07 09:17:12  DEBUG    ytdl: [yt-dlp] [download] Download completed
+2026-09-07 09:17:12  DEBUG    ytdl: [yt-dlp] [Merger] Merging formats into "C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\video\CliMergeTest\CLI Merge Test.mp4"
+2026-09-07 09:17:12  DEBUG    ytdl: [yt-dlp] Deleting original file C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\video\CliMergeTest\CLI Merge Test.fvonly.mp4 (pass -k to keep)
+2026-09-07 09:17:12  DEBUG    ytdl: [yt-dlp] Deleting original file C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\video\CliMergeTest\CLI Merge Test.faonly.m4a (pass -k to keep)
+2026-09-07 09:17:55  DEBUG    ytdl: FFmpeg found: C:\Users\Mohammad_Kafami\Desktop\ytdlp\bin\ffmpeg\ffmpeg.exe (project-local)
+2026-09-07 15:49:03  DEBUG    ytdl: FFmpeg found: C:\Users\Mohammad_Kafami\Desktop\ytdlp\bin\ffmpeg\ffmpeg.exe (project-local)
+2026-09-07 15:50:42  DEBUG    ytdl: FFmpeg found: C:\Users\Mohammad_Kafami\Desktop\ytdlp\bin\ffmpeg\ffmpeg.exe (project-local)
+2026-09-07 15:54:17  DEBUG    ytdl: [yt-dlp] [youtube] Extracting URL: https://www.youtube.com/shorts/W_7ZL9599tk
+2026-09-07 15:54:17  DEBUG    ytdl: [yt-dlp] [youtube] W_7ZL9599tk: Downloading webpage
+2026-09-07 15:54:19  WARNING  ytdl: [yt-dlp] [youtube] No supported JavaScript runtime could be found. Only deno is enabled by default; to use another runtime add  --js-runtimes RUNTIME[:PATH]  to your command/config. YouTube extraction without a JS runtime has been deprecated, and some formats may be missing. See  https://github.com/yt-dlp/yt-dlp/wiki/EJS  for details on installing one
+2026-09-07 15:54:19  DEBUG    ytdl: [yt-dlp] [youtube] W_7ZL9599tk: Downloading visionos player API JSON
+2026-09-07 15:54:19  DEBUG    ytdl: [yt-dlp] [youtube] W_7ZL9599tk: Downloading m3u8 information
+2026-09-07 15:54:21  DEBUG    ytdl: [yt-dlp] [youtube] Extracting URL: https://www.youtube.com/shorts/W_7ZL9599tk
+2026-09-07 15:54:21  DEBUG    ytdl: [yt-dlp] [youtube] W_7ZL9599tk: Downloading webpage
+2026-09-07 15:54:23  WARNING  ytdl: [yt-dlp] [youtube] No supported JavaScript runtime could be found. Only deno is enabled by default; to use another runtime add  --js-runtimes RUNTIME[:PATH]  to your command/config. YouTube extraction without a JS runtime has been deprecated, and some formats may be missing. See  https://github.com/yt-dlp/yt-dlp/wiki/EJS  for details on installing one
+2026-09-07 15:54:23  DEBUG    ytdl: [yt-dlp] [youtube] W_7ZL9599tk: Downloading visionos player API JSON
+2026-09-07 15:54:23  DEBUG    ytdl: [yt-dlp] [youtube] W_7ZL9599tk: Downloading m3u8 information
+2026-09-07 15:54:24  DEBUG    ytdl: [yt-dlp] [info] W_7ZL9599tk: Downloading 1 format(s): 251
+2026-09-07 15:54:24  DEBUG    ytdl: [yt-dlp] [info] Downloading video thumbnail 44 ...
+2026-09-07 15:54:25  DEBUG    ytdl: [yt-dlp] [info] Writing video thumbnail 44 to: C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\audio\The Best Bleach Soundtracks Ever ️‍🔥.webp
+2026-09-07 15:54:27  DEBUG    ytdl: [yt-dlp] [download] Destination: C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\audio\The Best Bleach Soundtracks Ever ️‍🔥.webm
+2026-09-07 15:54:28  DEBUG    ytdl: [yt-dlp] [download] Download completed
+2026-09-07 15:54:31  DEBUG    ytdl: [yt-dlp] [ExtractAudio] Destination: C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\audio\The Best Bleach Soundtracks Ever ️‍🔥.mp3
+2026-09-07 15:54:32  DEBUG    ytdl: [yt-dlp] Deleting original file C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\audio\The Best Bleach Soundtracks Ever ️‍🔥.webm (pass -k to keep)
+2026-09-07 15:54:32  DEBUG    ytdl: [yt-dlp] [Metadata] Adding metadata to "C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\audio\The Best Bleach Soundtracks Ever ️‍🔥.mp3"
+2026-09-07 15:54:32  DEBUG    ytdl: [yt-dlp] [ThumbnailsConvertor] Converting thumbnail "C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\audio\The Best Bleach Soundtracks Ever ️‍🔥.webp" to png
+2026-09-07 15:54:32  DEBUG    ytdl: [yt-dlp] [EmbedThumbnail] ffmpeg: Adding thumbnail to "C:\Users\Mohammad_Kafami\Desktop\ytdlp\download\audio\The Best Bleach Soundtracks Ever ️‍🔥.mp3"
